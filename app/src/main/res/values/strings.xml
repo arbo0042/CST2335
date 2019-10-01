@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lab1</string>
+    <string name="app_name">Lab3</string>
     <string name="hello_message">Hello World!</string>
     <string name="ButtonText"> Click Here</string>
     <string name="look"> Look at my GUI </string>
@@ -7,4 +7,16 @@
     <string name="checkbox"> Check this out! </string>
     <string name="hint"> Type Here</string>
     <string name="text1"> String On/Off</string>
+    <string name="email"> Enter your email address:</string>
+    <string name="hintemail">Type email here</string>
+    <string name="password">Type your password:</string>
+    <string name="login">LOGIN</string>
+    <string name="yourname">Your name:</string>
+    <string name="yourprofile">Your profile</string>
+    <string name="youremail">Your email:</string>
+    <string name="yourpicture">Your picture:</string>
+    <string name="clickabove">Click the button above to take a picture</string>
+    <string name="hintname">Enter your name</string>
+    <string name="hintemailaddress">Enter your email</string>
+
 </resources>
