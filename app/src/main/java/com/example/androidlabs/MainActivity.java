@@ -13,11 +13,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private SharedPreferences pref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_lab3);
-        SharedPreferences prefs = getSharedPreferences("activity_main_lab3" , MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("shared_preferences" , MODE_PRIVATE);
         // The following will keep information that was already input by the user
         // if the Pause button is pressed
         // Create a new string to hold the User Input for email address
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
        editor.putString("emailAddress",editor.toString());
 
        TextView editText2 = findViewById(R.id.password);
-       editor.putString ("password", editText1.toString());
+       editor.putString ("password", editText1.getText().toString());
 
         editor.commit();
 
