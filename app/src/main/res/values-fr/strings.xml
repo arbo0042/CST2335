@@ -19,6 +19,9 @@
  <string name="clickabove">Cliquez sur le bouton ci-dessus pour prendre une photo</string>
  <string name="hintname">Entrez votre nom</string>
  <string name="hintemailaddress">Entrer votre Email</string>
+ <string name="buttonChat">aller discuter</string>
+ <string name="Send">Envoyer</string>
+ <string name="Receive">Recevoir</string>
 
 
 </resources>

@@ -6,12 +6,12 @@
 
 
     <TextView
-        android:id="@+id/text1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_columnSpan="2"
-        android:textSize="30dp"
-        android:text="@string/look"/>
+    android:id="@+id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_columnSpan="2"
+    android:textSize="30dp"
+    android:text="@string/look"/>
 
     <Button
         android:id="@+id/button"

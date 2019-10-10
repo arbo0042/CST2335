@@ -1,0 +1,118 @@
+package com.example.androidlabs;
+
+import android.os.Bundle;
+import android.os.Message;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import com.example.androidlabs.ProfileActivity;
+import com.example.androidlabs.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import static android.media.CamcorderProfile.get;
+
+
+public class ChatRoomActivity extends AppCompatActivity  {
+
+    ArrayList<MessageEntered> myEntryArrayList = new ArrayList<>();
+    BaseAdapter myAdapter;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_list_view);
+
+        ListView myList = findViewById(R.id.theList);
+        myList.setAdapter(myAdapter = new MyListAdapter() );
+
+        Button sendButton = (Button) findViewById(R.id.sendButton);
+        Button receiveButton = (Button) findViewById(R.id.receiveButton);
+
+        EditText currentEntry = findViewById(R.id.textEntered);
+       sendButton.setOnClickListener( click -> {
+
+           // add the content of the text entered to the array
+           //call the array . add( new MessageEntered Object ( true, entry(from xml).getText.toString)
+           //clear the field (entry(from xml) manually mad it " ")
+         myEntryArrayList.add(new MessageEntered(true, currentEntry.getText().toString()));
+            currentEntry.setText("");
+            myAdapter.notifyDataSetChanged();
+       });
+
+       receiveButton.setOnClickListener( v ->{
+         myEntryArrayList.add(new MessageEntered(false, currentEntry.getText().toString()));
+         currentEntry.setText("");
+         myAdapter.notifyDataSetChanged();
+       });
+
+
+    }
+    private class MyListAdapter extends BaseAdapter {
+        // An inner class that only needs to be used here.
+
+            @Override
+            public int getCount(){
+                return myEntryArrayList.size();
+            }
+
+            // This shows what is being shown
+            @Override
+            public MessageEntered getItem(int p){
+                return myEntryArrayList.get(p);
+            }
+
+            // This returns the database ID
+            //Since we are not using a database it will just return itself.
+            //example database return of 0 is 0, 1 is 1 etc.
+
+            @Override
+            public long getItemId(int p){
+                return p;
+            }
+
+
+            // This shows how it's being shown, text view, button etc.
+        @Override
+            public View getView(int p, View view, ViewGroup parent){
+
+               //
+
+                LayoutInflater inflater= getLayoutInflater();
+                //View thisRow = getLayoutInflater().inflate(R.layout.activity_list_view, null);
+                myEntryArrayList.get(p).isSendButtonPressed();
+                myEntryArrayList.get(p).messageEntered();
+
+
+
+                if (myEntryArrayList.get(p).isSendButtonPressed()) {
+
+                  view= inflater.inflate(R.layout.activity_table_row_send, parent, false);
+                  TextView sndView = view.findViewById(R.id.sendField);
+                  sndView.setText(myEntryArrayList.get(p).messageEntered());
+                    return view;
+                    //TextView itemText = new TextView();
+                    //itemText.setText("Array at:" + getItem(p));
+                } else {
+                    view = inflater.inflate(R.layout.activity_table_row_receive, parent, false);
+                    TextView rcdView = view.findViewById(R.id.receiveField);
+                    rcdView.setText(myEntryArrayList.get(p).messageEntered());
+                    return view;
+                    }
+            }// End GetView
+        }
+    }
+
+
+

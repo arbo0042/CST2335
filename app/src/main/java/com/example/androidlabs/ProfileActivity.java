@@ -47,7 +47,18 @@ public class ProfileActivity extends AppCompatActivity {
             });
         }
         Log.e(ACTIVITY_NAME, "In function onCreate");
-    }
+
+
+    Button chatButton = (Button)findViewById(R.id.buttonChat);
+
+    // Create a Click Listener  which will create an Intent
+    // Also Assigns information with .putExtra to be called by another class if needed
+        if (chatButton !=null)
+            chatButton.setOnClickListener(v -> {
+            Intent goToChatRoom = new Intent(ProfileActivity.this, ChatRoomActivity.class);
+             startActivity(goToChatRoom);
+        });
+    }// End of OnCreate
     //Creates an Intent to use the built in camera of the Andriod Phone
          private void dispatchTakePictureIntent() {
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
