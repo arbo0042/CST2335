@@ -16,6 +16,7 @@
         <activity android:name=".MessageEntered"></activity>
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ChatRoomActivity" />
+        <activity android:name=".MyDatabaseOpenHelper" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
