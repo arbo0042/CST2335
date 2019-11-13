@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import static com.example.androidlabs.R.id.imageButton;
 
+
 public class ProfileActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -58,6 +59,19 @@ public class ProfileActivity extends AppCompatActivity {
             Intent goToChatRoom = new Intent(ProfileActivity.this, ChatRoomActivity.class);
              startActivity(goToChatRoom);
         });
+
+    Button weatherButton = (Button)findViewById(R.id.weatherButton);
+
+    // Create a Click Listener  which will create an Intent
+    // Also Assigns information with .putExtra to be called by another class if needed
+        if (weatherButton !=null)
+            weatherButton.setOnClickListener(v -> {
+                Intent goToWeatherForecast  = new Intent(ProfileActivity.this, WeatherForecast.class);
+                startActivity(goToWeatherForecast);
+            });
+
+
+
     }// End of OnCreate
     //Creates an Intent to use the built in camera of the Andriod Phone
          private void dispatchTakePictureIntent() {
@@ -67,7 +81,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         }
 
-    //
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {

@@ -22,6 +22,11 @@
  <string name="buttonChat">aller discuter</string>
  <string name="Send">Envoyer</string>
  <string name="Receive">Recevoir</string>
+ <string name="weatherButton"> Prévisions Météorologiques </string>
+ <string name="currentWeather">Météo actuelle</string>
+ <string name="minTemperature">Température minimale</string>
+ <string name="maxTemperature">Température maximale</string>
+ <string name="uvRating">Note Ultra Violet</string>
 
 
 </resources>
