@@ -70,7 +70,13 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(goToWeatherForecast);
             });
 
+    Button toolBarButtun = (Button)findViewById(R.id.testToolBar);
 
+        if (toolBarButtun !=null)
+            toolBarButtun.setOnClickListener(v -> {
+                Intent goToToolBar  = new Intent(ProfileActivity.this, TestToolBar.class);
+                startActivity(goToToolBar);
+            });
 
     }// End of OnCreate
     //Creates an Intent to use the built in camera of the Andriod Phone

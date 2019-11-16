@@ -26,6 +26,11 @@
     <string name="minTemperature">Minimum Temperature</string>
     <string name="maxTemperature">Maximum Temperature</string>
     <string name="uvRating">UV Rating</string>
+    <string name="toolBarButton">Go to Toolbar Page</string>
+    <string name="google">Google Drive</string>
+    <string name="picture">Picture</string>
+    <string name= "text"> Text</string>
+    <string name = "upload">Upload</string>
 
 
 </resources>

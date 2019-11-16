@@ -27,6 +27,11 @@
  <string name="minTemperature">Température minimale</string>
  <string name="maxTemperature">Température maximale</string>
  <string name="uvRating">Note Ultra Violet</string>
+ <string name="toolBarButton">Aller à la page de la barre d\'outils</string>
+ <string name="google">Google</string>
+ <string name="picture">Image</string>
+ <string name= "text"> Texte</string>
+ <string name = "upload">Télécharger</string>
 
 
 </resources>
